@@ -22,7 +22,7 @@ const Wave: React.FC = () => {
             rel="no-referrer"
             target="_blank"
           >
-            <EventAvailableIcon fontSize="small" />
+            <EventAvailableIcon />
             <Typography>Agendar horario</Typography>
           </IconContainer>
         </ButtonStyled>
@@ -32,14 +32,14 @@ const Wave: React.FC = () => {
             rel="no-referrer"
             target="_blank"
           >
-            <WhatsAppIcon fontSize="small" />
+            <WhatsAppIcon />
             <Typography>Whatsapp</Typography>
           </IconContainer>
         </ButtonStyled>
         <ButtonStyled>
-          <IconContainer href="tel:1146124758">
-            <PhoneIcon fontSize="small" />
-            <Typography>Telefonar</Typography>
+          <IconContainer href="tel:11939275814">
+            <PhoneIcon />
+            <Typography>Ligar</Typography>
           </IconContainer>
         </ButtonStyled>
       </CentralStyled>

@@ -21,10 +21,10 @@ export const CentralStyled = styled("div")`
   align-items: center;
   justify-content: center;
   padding-top: auto 0;
-  height: 250px;
+  height: 200px;
   width: 30vw;
-  min-width: 300px;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  min-width: 280px;
+  background-color: ${({ theme }) => theme.palette.primary.dark};
   border-radius: 15px;
   opacity: 0.7;
 `;
@@ -38,7 +38,7 @@ export const LogoStyled = styled("img")`
 export const ButtonStyled = styled(Button)`
   height: 150px;
   background-color: ${({ theme }) => theme.palette.primary.main};
-  color: ${({ theme }) => theme.palette.primary.light};
+  color: ${({ theme }) => theme.palette.primary.dark};
   margin: 10px 0;
   width: 90%;
   opacity: 1;
@@ -49,5 +49,5 @@ export const IconContainer = styled("a")`
   display: grid;
   grid-template-columns: 30px 1fr;
   text-decoration: none;
-  color: ${({ theme }) => theme.palette.primary.light};
+  color: ${({ theme }) => theme.palette.primary.dark};
 `;
