@@ -11,6 +11,7 @@ export default function WhatsAppButton() {
       statusMessage="online"
       placeholder="Digite sua mensagem"
       chatMessage="Olá! Como posso te ajudar?"
+      notificationDelay={15}
     />
   );
 }
