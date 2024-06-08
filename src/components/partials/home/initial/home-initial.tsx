@@ -8,13 +8,16 @@ export function HomeInitial() {
     <Box>
       <Grid container component={Container}>
         <Grid item xs>
-          <Box className="flex items-start justify-center animate-slideInFromLeft h-full flex-col">
+          <Box
+            className="flex items-start justify-center animate-slideInFromLeft h-full flex-col"
+            minHeight="70vh"
+          >
             <Typography
               variant="h2"
               color="secondary.main"
               fontWeight="bold"
-              fontSize="1.90rem"
-              maxWidth="90%"
+              fontSize={{ xs: '1.2rem', md: '2rem' }}
+              maxWidth={{ xs: '100%', md: '90%' }}
               sx={{
                 '&:before': {
                   content: '""',
@@ -26,13 +29,19 @@ export function HomeInitial() {
                   mx: -1,
                   mt: -3,
                   transform: 'scaleX(-1)',
-                  fontSize: '2rem',
+                  fontSize: { xs: '1.3rem', md: '2rem' },
                 }}
               />{' '}
               <TypewriterEffect text="Porque beleza e autoestima não têm idade nem gênero" />{' '}
-              <FormatQuote sx={{ mx: -1, mt: -3, fontSize: '2rem' }} />
+              <FormatQuote
+                sx={{ mx: -1, mt: -3, fontSize: { xs: '1.3rem', md: '2rem' } }}
+              />
             </Typography>
-            <Typography color="secondary.main" mb={4}>
+            <Typography
+              color="secondary.main"
+              mb={4}
+              fontSize={{ xs: '0.9rem', md: '1.2rem' }}
+            >
               Venha conhecer nossos serviços e se apaixonar por você mesmo!
             </Typography>
 
@@ -46,7 +55,7 @@ export function HomeInitial() {
             </Button>
           </Box>
         </Grid>
-        <Grid item md>
+        <Grid item md display={{ xs: 'none', md: 'block' }}>
           <Box
             mx="auto"
             my={4}
@@ -72,8 +81,8 @@ export function HomeInitial() {
       <Image
         src="/waves.svg"
         alt="Cristiane Oliveira"
-        width={300}
-        height={300}
+        width={150}
+        height={150}
         style={{
           width: '100%',
         }}
