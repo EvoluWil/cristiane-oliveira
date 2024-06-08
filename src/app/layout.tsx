@@ -1,3 +1,4 @@
+import { Footer } from '@/components/display/footer/footer';
 import { Header } from '@/components/display/header/header';
 import WhatsAppButton from '@/components/layout/whatsapp/whatsapp';
 import '@/global/globals.css';
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           <Box mt={10}>{children}</Box>
           <WhatsAppButton />
+          <Footer />
           <CssBaseline />
         </AppProviders>
       </body>

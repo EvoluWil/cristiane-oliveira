@@ -1,14 +1,15 @@
 import { HomeAesthetics } from '@/components/partials/home/aesthetics/home-aesthetics';
 import { HomeInitial } from '@/components/partials/home/initial/home-initial';
+import { HomeLocation } from '@/components/partials/home/location/location';
 import { Box } from '@mui/material';
 import type { Viewport } from 'next';
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 1.9,
-  maximumScale: 1.9,
+  initialScale: 1.0,
+  maximumScale: 1.0,
   userScalable: false,
-  minimumScale: 1.9,
+  minimumScale: 1.0,
 };
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <Box>
       <HomeInitial />
       <HomeAesthetics />
+      <HomeLocation />
     </Box>
   );
 }
