@@ -12,7 +12,10 @@ export function HomeLocation() {
       justifyContent="center"
       flexDirection="column"
       py={4}
+      position="relative"
     >
+      <Box id="contato" position="absolute" top={-80} />
+
       <Typography
         variant="h4"
         className="animate-zoomIn"

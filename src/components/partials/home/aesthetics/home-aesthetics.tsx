@@ -27,7 +27,9 @@ export function HomeAesthetics() {
         alignItems="center"
         justifyContent="center"
         flexDirection="column"
+        position="relative"
       >
+        <Box id="estetica" position="absolute" top={-120} />
         <Typography
           variant="h4"
           className="animate-zoomIn"
@@ -54,8 +56,8 @@ export function HomeAesthetics() {
               Laser Lavieen, hidratação facial e Ledterapia combatem rugas,
               manchas e acne, enquanto a limpeza de pele e drenagem linfática
               revitalizam e desintoxicam. Experimente nossos tratamentos
-              personalizados e sinta-se mais jovem e confiante. Agende sua
-              consulta hoje!
+              personalizados e sinta-se mais jovem e confiante. Agende seu
+              horário hoje!
             </Typography>
           </Box>
           <ImageList
@@ -150,7 +152,7 @@ export function HomeAesthetics() {
               bem-estar. Nossos tratamentos, desde a drenagem linfática até o
               peeling, promovem a saúde da pele, tonificação muscular e
               relaxamento. Cuide do seu corpo com técnicas avançadas e
-              resultados visíveis. Agende sua consulta e descubra uma nova você!
+              resultados visíveis. Agende seu horário e descubra uma nova você!
             </Typography>
           </Box>
           <ImageList

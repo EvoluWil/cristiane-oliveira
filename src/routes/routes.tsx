@@ -22,31 +22,31 @@ export const routes: Route[] = [
   {
     id: 'INÍCIO',
     icon: <People sx={{ color: 'white' }} />,
-    path: '/',
+    path: '/#',
   },
   {
     id: 'ESTÉTICA',
     icon: <InterpreterMode sx={{ color: 'white' }} />,
-    path: '/admin/instructors',
+    path: '/#estetica',
   },
   {
     id: 'SAÚDE',
     icon: <InterpreterMode sx={{ color: 'white' }} />,
-    path: '/admin/instructors',
+    path: '/#',
   },
   {
     id: 'BELEZA',
     icon: <OndemandVideo sx={{ color: 'white' }} />,
-    path: '/admin/classes',
+    path: '/#',
   },
   {
     id: 'BEM-ESTAR',
     icon: <Newspaper sx={{ color: 'white' }} />,
-    path: '/admin/blogs',
+    path: '/#',
   },
   {
     id: 'CONTATO',
     icon: <CrisisAlert sx={{ color: 'white' }} />,
-    path: '/admin/objectives',
+    path: '/#contato',
   },
 ];

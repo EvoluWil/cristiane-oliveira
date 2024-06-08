@@ -2,38 +2,19 @@
 
 import { AnimatedLink } from '@/components/layout/animated-link/animated-link';
 import { routes } from '@/routes/routes';
-import { Menu } from '@mui/icons-material';
 import { Box, Button, Container, useMediaQuery } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Navigator } from '../navigator/navigator';
 
 export function Header() {
   const [isNavOnTop, setIsNavOnTop] = useState(true);
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   const match = useMediaQuery('(max-width:800px)');
-
-  const pathTitle = routes.reduce((acc, route) => {
-    if (route.path === pathname) {
-      return route.id;
-    }
-
-    if (route.subRoutes) {
-      const subRoute = route.subRoutes?.find((sub) => sub.path === pathname);
-      if (subRoute) {
-        return subRoute.id;
-      }
-    }
-
-    return acc;
-  }, '');
 
   useEffect(() => {
     const onScroll = () => {
@@ -51,13 +32,8 @@ export function Header() {
     };
   }, []);
 
-  if (!pathTitle) {
-    return null;
-  }
-
   return (
     <Box color="white" position="relative">
-      <Navigator open={open} onClose={() => setOpen(false)} />
       <AppBar
         position="fixed"
         elevation={0}
@@ -82,15 +58,7 @@ export function Header() {
             <Grid container spacing={0.5} alignItems="center">
               <Grid item>
                 {match ? (
-                  <Box display="flex" alignItems="center">
-                    <IconButton
-                      color="inherit"
-                      onClick={() => setOpen(true)}
-                      edge="start"
-                    >
-                      <Menu />
-                    </IconButton>
-                  </Box>
+                  <Box display="flex" alignItems="center"></Box>
                 ) : (
                   <Image
                     src={isNavOnTop ? '/logo-white.svg' : '/logo.svg'}
