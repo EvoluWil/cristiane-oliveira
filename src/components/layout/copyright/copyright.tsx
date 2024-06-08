@@ -11,7 +11,11 @@ export const Copyright: React.FC<TypographyProps> = (props) => {
       {...props}
     >
       Copyright ©{' '}
-      <Link color="inherit" href="https://mui.com/" target="_blank">
+      <Link
+        color="inherit"
+        href="https://willianrodrigues-tk.vercel.app"
+        target="_blank"
+      >
         Wrs Tecnologia
       </Link>
       {' · '}

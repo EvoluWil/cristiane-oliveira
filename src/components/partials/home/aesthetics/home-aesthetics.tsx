@@ -130,7 +130,7 @@ export function HomeAesthetics() {
           className="animate-zoomIn"
           fontSize={{ xs: '1.5rem', md: '2rem' }}
         >
-          Estética Facial
+          Estética Corporal
         </Typography>
         <Divider
           sx={{ bgcolor: 'primary.main', width: 280, height: 2, mb: 2 }}
