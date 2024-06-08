@@ -16,8 +16,8 @@ import {
 import Image from 'next/image';
 
 export function HomeAesthetics() {
-  const matchMD = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
-  const matchSM = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'));
+  const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+  const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   return (
     <>
       <Box
@@ -59,10 +59,11 @@ export function HomeAesthetics() {
             </Typography>
           </Box>
           <ImageList
-            cols={matchMD ? 4 : matchSM ? 3 : 1}
-            gap={16}
+            cols={isXS ? 1 : isSM ? 3 : 4}
+            gap={32}
             variant="standard"
             sx={{ pb: 2 }}
+            className="animate-slideIn"
           >
             {FACIAL_SERVICES.map((item) => (
               <ImageListItem
@@ -153,10 +154,11 @@ export function HomeAesthetics() {
             </Typography>
           </Box>
           <ImageList
-            cols={matchMD ? 4 : matchSM ? 3 : 1}
-            gap={16}
+            cols={isXS ? 1 : isSM ? 3 : 4}
+            gap={32}
             variant="standard"
             sx={{ pb: 2 }}
+            className="animate-slideInFromLeft"
           >
             {BODY_SERVICES.map((item) => (
               <ImageListItem

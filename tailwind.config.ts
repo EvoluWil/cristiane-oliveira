@@ -34,7 +34,7 @@ const config: Config = {
         slideIn: 'slideIn 1.2s ease-out forwards',
         slideInFromLeft: 'slideInFromLeft 1.2s ease-out forwards',
         fadeInUp: 'fadeInUp 1.2s ease-out forwards',
-        zoomIn: 'zoomIn 1s ease-out forwards',
+        zoomIn: 'zoomIn 1.2s ease-out forwards',
         increaseSizeFromCenter: 'increaseSizeFromCenter 1.2s ease-out forwards',
       },
     },
