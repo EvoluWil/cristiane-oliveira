@@ -36,7 +36,7 @@ export function HomeLocation() {
         textAlign="center"
         fontSize={{ xs: '0.9rem', md: '1rem' }}
       >
-        Estamos localizados no coração da Granja Viana, em Cotia, São Paulo.
+        Estamos localizados no coração da Granja Viana, em Cotia - SP. <br />
         Venha nos visitar e tenha um atendimento de excelência, com máximo
         conforto e qualidade nos serviços prestados.
       </Typography>
