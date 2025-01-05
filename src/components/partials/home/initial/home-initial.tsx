@@ -5,11 +5,35 @@ import Image from 'next/image';
 
 export function HomeInitial() {
   return (
-    <Box>
+    <>
+      <Box
+        display={{ md: 'none', xs: 'unset' }}
+        position="absolute"
+        zIndex={-1}
+        mt={-2}
+        width="100%"
+        height="100%"
+      >
+        <Image
+          src="/home-initial-background.png"
+          alt="Cristiane Oliveira"
+          width={300}
+          height={300}
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+            opacity: 0.4,
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
+          }}
+        />
+      </Box>
       <Grid container component={Container}>
-        <Grid item xs>
+        <Grid item xs position={{ xs: 'relative', md: 'static' }}>
           <Box
             className="flex items-start justify-center animate-slideInFromLeft h-full flex-col"
+            px={{ xs: 0.5, md: 0 }}
             minHeight="70vh"
           >
             <Typography
@@ -34,7 +58,11 @@ export function HomeInitial() {
               />{' '}
               <TypewriterEffect text="Porque beleza e autoestima não têm idade nem gênero" />{' '}
               <FormatQuote
-                sx={{ mx: -1, mt: -3, fontSize: { xs: '1.3rem', md: '2rem' } }}
+                sx={{
+                  mx: -1,
+                  mt: -3,
+                  fontSize: { xs: '1.3rem', md: '2rem' },
+                }}
               />
             </Typography>
             <Typography
@@ -81,12 +109,15 @@ export function HomeInitial() {
       <Image
         src="/waves.svg"
         alt="Cristiane Oliveira"
-        width={150}
-        height={150}
+        width={160}
+        height={160}
         style={{
+          marginTop: '-16px',
+          marginBottom: '-2px',
+          position: 'relative',
           width: '100%',
         }}
       />
-    </Box>
+    </>
   );
 }
