@@ -30,19 +30,14 @@ export const routes: Route[] = [
     path: '/#estetica',
   },
   {
-    id: 'SAÚDE',
-    icon: <InterpreterMode sx={{ color: 'white' }} />,
-    path: '/#',
-  },
-  {
     id: 'BELEZA',
     icon: <OndemandVideo sx={{ color: 'white' }} />,
-    path: '/#',
+    path: '/#beauty',
   },
   {
-    id: 'BEM-ESTAR',
+    id: 'SAÚDE & BEM-ESTAR',
     icon: <Newspaper sx={{ color: 'white' }} />,
-    path: '/#',
+    path: '/#health',
   },
   {
     id: 'CONTATO',

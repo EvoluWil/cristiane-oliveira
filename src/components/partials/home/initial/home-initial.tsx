@@ -1,9 +1,15 @@
+'use client';
+
 import { TypewriterEffect } from '@/components/layout/type-writer/type-writer';
+import PromotionModal from '@/components/modals/promotion/promotion.modal';
 import { FormatQuote } from '@mui/icons-material';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export function HomeInitial() {
+  const [modalOpen, setModalOpen] = useState(true);
+
   return (
     <>
       <Box
@@ -117,6 +123,32 @@ export function HomeInitial() {
           position: 'relative',
           width: '100%',
         }}
+      />
+      <PromotionModal
+        open={modalOpen}
+        handleClose={() => setModalOpen(false)}
+        imageUrl="/facial.png"
+        title="CONHEÇA O LASER LAVIEEN"
+        description={
+          <Box display="flex" flexDirection="column" alignItems="center">
+            O Laser Lavieen é um tratamento inovador que promove a renovação da
+            pele, estimulando a produção de colágeno e elastina, melhorando a
+            textura e a firmeza da pele.
+            <Typography textAlign="center" mt={2}>
+              Agende sua sessão agora mesmo e experimente a transformação da sua
+              pele!
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              href="https://www.trinks.com/cristianeoliveira"
+              target="_blank"
+              sx={{ mt: 2 }}
+            >
+              Agendar meu horário
+            </Button>
+          </Box>
+        }
       />
     </>
   );

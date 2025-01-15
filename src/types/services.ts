@@ -1,4 +1,8 @@
 export type Service = {
   title: string;
-  description: string;
+  subtitle: string;
+  descriptions: string[];
+  advantages: string[];
+  images: string[];
+  footer: string;
 };

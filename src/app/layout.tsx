@@ -30,8 +30,8 @@ export default function RootLayout({
           <Box mt={10}>{children}</Box>
           <WhatsAppButton />
           <Footer />
-          <CssBaseline />
         </AppProviders>
+        <CssBaseline />
       </body>
     </html>
   );

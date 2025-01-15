@@ -1,9 +1,13 @@
 'use client';
 
+import { ImageCarousel } from '@/components/layout/image-carousel/image-carousel';
+import ServiceModal from '@/components/modals/service/service.modal';
 import { BODY_SERVICES } from '@/constants/services/body';
 import { FACIAL_SERVICES } from '@/constants/services/facial';
+import { Service } from '@/types/services';
 import {
   Box,
+  Button,
   Container,
   Divider,
   ImageList,
@@ -14,8 +18,15 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export function HomeAesthetics() {
+  const [selectedService, setSelectedService] = useState<null | Service>(null);
+
+  const handleSelectService = (service: Service | null) => {
+    setSelectedService(service);
+  };
+
   const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   return (
@@ -42,22 +53,25 @@ export function HomeAesthetics() {
           className="animate-increaseSizeFromCenter"
         />
         <Container>
-          <Box display="flex" alignItems="center" justifyContent="center">
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            bgcolor="primary.main"
+          >
             <Typography
               className="animate-fadeInUp"
               color="secondary.main"
               mb={4}
               maxWidth={800}
               textAlign="center"
-              fontSize={{ xs: '0.9rem', md: '1.2rem' }}
+              fontSize={{ xs: '0.8rem', md: '1rem' }}
             >
               A estética facial não só realça sua beleza natural, mas também
-              melhora sua saúde e bem-estar. Tratamentos como microagulhamento,
-              Laser Lavieen, hidratação facial e Ledterapia combatem rugas,
-              manchas e acne, enquanto a limpeza de pele e drenagem linfática
-              revitalizam e desintoxicam. Experimente nossos tratamentos
-              personalizados e sinta-se mais jovem e confiante. Agende seu
-              horário hoje!
+              melhora sua saúde e bem-estar.
+              <br />
+              Experimente nossos tratamentos personalizados e sinta-se mais
+              jovem e confiante.
             </Typography>
           </Box>
           <ImageList
@@ -69,28 +83,19 @@ export function HomeAesthetics() {
           >
             {FACIAL_SERVICES.map((item) => (
               <ImageListItem
+                onClick={() => handleSelectService(item)}
                 key={item.title}
                 sx={{
-                  bgcolor: 'rgba(255, 255, 255, 0.5)',
+                  bgcolor: 'rgba(214,157,161, 0.5)',
                   borderRadius: 1,
                   overflow: 'hidden',
                   boxShadow: 4,
                 }}
               >
-                <Image
-                  src="/facial.png"
-                  alt={item.title}
-                  width={248}
-                  height={248}
-                  layout="responsive"
-                />
+                <ImageCarousel images={item.images} />
                 <ImageListItemBar
                   title={item.title}
-                  subtitle={
-                    <Typography variant="caption" display="block" pt={1}>
-                      {item.description}
-                    </Typography>
-                  }
+                  subtitle={item.subtitle}
                   position="below"
                   sx={{
                     color: 'secondary.main',
@@ -100,6 +105,12 @@ export function HomeAesthetics() {
                     },
                   }}
                 />
+                <Button
+                  variant="text"
+                  sx={{ color: 'white', fontSize: '0.8rem' }}
+                >
+                  Saiba mais
+                </Button>
               </ImageListItem>
             ))}
           </ImageList>
@@ -146,13 +157,12 @@ export function HomeAesthetics() {
               mb={4}
               maxWidth={800}
               textAlign="center"
-              fontSize={{ xs: '0.9rem', md: '1.2rem' }}
+              fontSize={{ xs: '0.8rem', md: '1rem' }}
             >
               Experimente a estética corporal para realçar sua beleza e
-              bem-estar. Nossos tratamentos, desde a drenagem linfática até o
-              peeling, promovem a saúde da pele, tonificação muscular e
-              relaxamento. Cuide do seu corpo com técnicas avançadas e
-              resultados visíveis. Agende seu horário e descubra uma nova você!
+              bem-estar.
+              <br /> Cuide do seu corpo com técnicas avançadas e resultados
+              visíveis.
             </Typography>
           </Box>
           <ImageList
@@ -160,32 +170,23 @@ export function HomeAesthetics() {
             gap={32}
             variant="standard"
             sx={{ pb: 2 }}
-            className="animate-slideInFromLeft"
+            className="animate-slideIn"
           >
             {BODY_SERVICES.map((item) => (
               <ImageListItem
+                onClick={() => handleSelectService(item)}
                 key={item.title}
                 sx={{
-                  bgcolor: 'rgba(255, 255, 255, 0.5)',
+                  bgcolor: 'rgba(214,157,161, 0.5)',
                   borderRadius: 1,
                   overflow: 'hidden',
                   boxShadow: 4,
                 }}
               >
-                <Image
-                  src="/facial.png"
-                  alt={item.title}
-                  width={248}
-                  height={248}
-                  layout="responsive"
-                />
+                <ImageCarousel images={item.images} />
                 <ImageListItemBar
                   title={item.title}
-                  subtitle={
-                    <Typography variant="caption" display="block" pt={1}>
-                      {item.description}
-                    </Typography>
-                  }
+                  subtitle={item.subtitle}
                   position="below"
                   sx={{
                     color: 'secondary.main',
@@ -195,11 +196,22 @@ export function HomeAesthetics() {
                     },
                   }}
                 />
+                <Button
+                  variant="text"
+                  sx={{ color: 'white', fontSize: '0.8rem', mt: 'auto' }}
+                >
+                  Saiba mais
+                </Button>
               </ImageListItem>
             ))}
           </ImageList>
         </Container>
       </Box>
+      <ServiceModal
+        open={!!selectedService}
+        handleClose={() => handleSelectService(null)}
+        service={selectedService}
+      />
     </>
   );
 }

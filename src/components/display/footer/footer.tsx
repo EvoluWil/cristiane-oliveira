@@ -1,5 +1,5 @@
 import { Copyright } from '@/components/layout/copyright/copyright';
-import { Call, Place } from '@mui/icons-material';
+import { Call, Place, WhatsApp } from '@mui/icons-material';
 import { Box, Container, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 
@@ -132,6 +132,27 @@ export const Footer = () => {
                     borderWidth: 2,
                   }}
                 />
+              </Box>
+              <Box
+                component="a"
+                href="https://api.whatsapp.com/send/?phone=5511939275814"
+                target="_blank"
+              >
+                <Box
+                  style={{
+                    borderRadius: '6px',
+                    border: '1px solid #492132',
+                    borderWidth: 2,
+                  }}
+                >
+                  <WhatsApp
+                    sx={{
+                      width: 42,
+                      height: 42,
+                      opacity: 0.8,
+                    }}
+                  />
+                </Box>
               </Box>
             </Box>
           </Grid>
