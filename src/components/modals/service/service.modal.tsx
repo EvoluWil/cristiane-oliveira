@@ -1,7 +1,15 @@
 import { ImageCarousel } from '@/components/layout/image-carousel/image-carousel';
 import { Service } from '@/types/services';
-import { CheckCircle } from '@mui/icons-material';
-import { Box, List, ListItem, Modal, Typography } from '@mui/material';
+import { CheckCircle, Close } from '@mui/icons-material';
+import {
+  Box,
+  Button,
+  IconButton,
+  List,
+  ListItem,
+  Modal,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 
 type ServiceModalProps = {
@@ -34,6 +42,22 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
           },
         }}
       >
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            cursor: 'pointer',
+            zIndex: 1,
+            color: 'white',
+            border: '1px solid white',
+          }}
+        >
+          <Close />
+        </IconButton>
+
         <ImageCarousel images={service?.images || []} />
 
         <Typography
@@ -138,6 +162,17 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
         >
           {service?.footer}
         </Typography>
+
+        <Box alignItems="center" display="flex" justifyContent="center" pb={2}>
+          <Button
+            variant="contained"
+            color="primary"
+            href="https://www.trinks.com/cristianeoliveira"
+            target="_blank"
+          >
+            Agende seu horário
+          </Button>
+        </Box>
       </Box>
     </Modal>
   );

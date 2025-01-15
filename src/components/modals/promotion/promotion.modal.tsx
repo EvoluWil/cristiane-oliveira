@@ -1,10 +1,11 @@
-import { Box, Modal, Typography } from '@mui/material';
+import { Close } from '@mui/icons-material';
+import { Box, IconButton, Modal, Typography } from '@mui/material';
 import React from 'react';
 
 interface PromotionModalProps {
   open: boolean;
   handleClose: () => void;
-  imageUrl: string;
+  videoUrl: string;
   title: string;
   description: string | JSX.Element;
 }
@@ -12,7 +13,7 @@ interface PromotionModalProps {
 const PromotionModal: React.FC<PromotionModalProps> = ({
   open,
   handleClose,
-  imageUrl,
+  videoUrl,
   title,
   description,
 }) => {
@@ -36,6 +37,22 @@ const PromotionModal: React.FC<PromotionModalProps> = ({
           },
         }}
       >
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            cursor: 'pointer',
+            zIndex: 1,
+            color: 'white',
+            border: '1px solid white',
+          }}
+        >
+          <Close />
+        </IconButton>
+
         <video
           style={{ width: '100%', maxHeight: 300, objectFit: 'cover' }}
           height={300}
@@ -43,16 +60,8 @@ const PromotionModal: React.FC<PromotionModalProps> = ({
           autoPlay
           poster="/poster.jpg"
         >
-          <source
-            src="https://firebasestorage.googleapis.com/v0/b/yoga-in-house.appspot.com/o/cris-oliveira_FT56mcTL%20(1).mp4?alt=media&token=2d7304bf-5e84-46a9-a2ba-335504d322f7"
-            type="video/mp4"
-          />
+          <source src={videoUrl} type="video/mp4" />
         </video>
-        {/* <img
-          src={imageUrl}
-          alt={title}
-          style={{ width: '100%', maxHeight: 300, objectFit: 'cover' }}
-        /> */}
         <Typography
           variant="h6"
           component="h2"

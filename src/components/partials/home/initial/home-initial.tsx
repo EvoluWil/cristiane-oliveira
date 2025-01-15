@@ -127,7 +127,7 @@ export function HomeInitial() {
       <PromotionModal
         open={modalOpen}
         handleClose={() => setModalOpen(false)}
-        imageUrl="/facial.png"
+        videoUrl="https://firebasestorage.googleapis.com/v0/b/yoga-in-house.appspot.com/o/cris-oliveira_FT56mcTL%20(1).mp4?alt=media&token=2d7304bf-5e84-46a9-a2ba-335504d322f7"
         title="CONHEÇA O LASER LAVIEEN"
         description={
           <Box display="flex" flexDirection="column" alignItems="center">
