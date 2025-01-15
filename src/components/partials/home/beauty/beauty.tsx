@@ -16,10 +16,13 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export function HomeBeauty() {
   const [selectedService, setSelectedService] = useState<null | Service>(null);
+  const [animation, setAnimation] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   const handleSelectService = (service: Service | null) => {
     setSelectedService(service);
@@ -27,6 +30,12 @@ export function HomeBeauty() {
 
   const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+
+  useEffect(() => {
+    if (inView) {
+      setAnimation(true);
+    }
+  }, [inView]);
 
   return (
     <Box
@@ -38,34 +47,34 @@ export function HomeBeauty() {
       flexDirection="column"
       py={4}
       position="relative"
+      className={animation ? 'animate-slideInFromLeft' : 'opacity-0'}
     >
-      <Box id="beauty" position="absolute" top={-80} />
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+      >
+        <Box id="beauty" position="absolute" top={-80} />
 
-      <Typography
-        variant="h4"
-        className="animate-zoomIn"
-        fontSize={{ xs: '1.5rem', md: '2rem' }}
-      >
-        Beleza
-      </Typography>
-      <Divider
-        sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }}
-        className="animate-increaseSizeFromCenter"
-      />
-      <Typography
-        className="animate-fadeInUp"
-        color="secondary.main"
-        mb={4}
-        maxWidth={800}
-        px={4}
-        textAlign="center"
-        fontSize={{ xs: '0.9rem', md: '1rem' }}
-      >
-        Experimente cuidados especiais para mãos, pés e cabelo, realçando sua
-        beleza e autoestima. <br />
-        Proporcione-se momentos de cuidado e renovação com técnicas avançadas e
-        resultados impecáveis.
-      </Typography>
+        <Typography variant="h4" fontSize={{ xs: '1.5rem', md: '2rem' }}>
+          Beleza
+        </Typography>
+        <Divider sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }} />
+        <Typography
+          color="secondary.main"
+          mb={4}
+          maxWidth={800}
+          px={4}
+          textAlign="center"
+          fontSize={{ xs: '0.9rem', md: '1rem' }}
+        >
+          Experimente cuidados especiais para mãos, pés e cabelo, realçando sua
+          beleza e autoestima. <br />
+          Proporcione-se momentos de cuidado e renovação com técnicas avançadas
+          e resultados impecáveis.
+        </Typography>
+      </Box>
 
       <Container>
         <ImageList
@@ -73,7 +82,7 @@ export function HomeBeauty() {
           gap={32}
           variant="standard"
           sx={{ pb: 2 }}
-          className="animate-slideIn"
+          ref={ref}
         >
           {BEAUTY_SERVICES.map((item) => (
             <ImageListItem

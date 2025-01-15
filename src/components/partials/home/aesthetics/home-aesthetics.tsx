@@ -18,10 +18,15 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export function HomeAesthetics() {
   const [selectedService, setSelectedService] = useState<null | Service>(null);
+  const [facialAnimation, setFacialAnimation] = useState(false);
+  const [bodyAnimation, setBodyAnimation] = useState(false);
+  const facialRef = useInView({ threshold: 0.1 });
+  const bodyRef = useInView({ threshold: 0.1 });
 
   const handleSelectService = (service: Service | null) => {
     setSelectedService(service);
@@ -29,6 +34,16 @@ export function HomeAesthetics() {
 
   const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+
+  useEffect(() => {
+    if (facialRef.inView) {
+      setFacialAnimation(true);
+    }
+
+    if (bodyRef.inView) {
+      setBodyAnimation(true);
+    }
+  }, [facialRef.inView, bodyRef.inView]);
   return (
     <>
       <Box
@@ -40,19 +55,20 @@ export function HomeAesthetics() {
         flexDirection="column"
         position="relative"
       >
-        <Box id="estetica" position="absolute" top={-120} />
-        <Typography
-          variant="h4"
-          className="animate-zoomIn"
-          fontSize={{ xs: '1.5rem', md: '2rem' }}
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          className={
+            facialAnimation ? 'opacity-100 animate-zoomIn' : 'opacity-0'
+          }
         >
-          Estética Facial
-        </Typography>
-        <Divider
-          sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }}
-          className="animate-increaseSizeFromCenter"
-        />
-        <Container>
+          <Box id="estetica" position="absolute" top={-120} />
+          <Typography variant="h4" fontSize={{ xs: '1.5rem', md: '2rem' }}>
+            Estética Facial
+          </Typography>
+          <Divider sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }} />
           <Box
             display="flex"
             alignItems="center"
@@ -60,7 +76,6 @@ export function HomeAesthetics() {
             bgcolor="primary.main"
           >
             <Typography
-              className="animate-fadeInUp"
               color="secondary.main"
               mb={4}
               maxWidth={800}
@@ -74,12 +89,17 @@ export function HomeAesthetics() {
               jovem e confiante.
             </Typography>
           </Box>
+        </Box>
+        <Container>
           <ImageList
             cols={isXS ? 1 : isSM ? 3 : 4}
             gap={32}
             variant="standard"
             sx={{ pb: 2 }}
-            className="animate-slideIn"
+            ref={facialRef.ref}
+            className={
+              facialAnimation ? 'opacity-100 animate-slideIn' : 'opacity-0'
+            }
           >
             {FACIAL_SERVICES.map((item) => (
               <ImageListItem
@@ -138,21 +158,21 @@ export function HomeAesthetics() {
         mb={4}
         mt={8}
       >
-        <Typography
-          variant="h4"
-          className="animate-zoomIn"
-          fontSize={{ xs: '1.5rem', md: '2rem' }}
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          className={bodyAnimation ? 'opacity-100 animate-zoomIn' : 'opacity-0'}
         >
-          Estética Corporal
-        </Typography>
-        <Divider
-          sx={{ bgcolor: 'primary.main', width: 280, height: 2, mb: 2 }}
-          className="animate-increaseSizeFromCenter"
-        />
-        <Container>
+          <Typography variant="h4" fontSize={{ xs: '1.5rem', md: '2rem' }}>
+            Estética Corporal
+          </Typography>
+          <Divider
+            sx={{ bgcolor: 'primary.main', width: 280, height: 2, mb: 2 }}
+          />
           <Box display="flex" alignItems="center" justifyContent="center">
             <Typography
-              className="animate-fadeInUp"
               color="secondary.main"
               mb={4}
               maxWidth={800}
@@ -165,12 +185,17 @@ export function HomeAesthetics() {
               visíveis.
             </Typography>
           </Box>
+        </Box>
+        <Container>
           <ImageList
             cols={isXS ? 1 : isSM ? 3 : 4}
             gap={32}
             variant="standard"
             sx={{ pb: 2 }}
-            className="animate-slideIn"
+            ref={bodyRef.ref}
+            className={
+              bodyAnimation ? 'opacity-100 animate-slideIn' : 'opacity-0'
+            }
           >
             {BODY_SERVICES.map((item) => (
               <ImageListItem

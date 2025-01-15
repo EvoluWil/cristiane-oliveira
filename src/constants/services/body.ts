@@ -132,17 +132,41 @@ export const BODY_SERVICES = [
     images: ['/aesthetics/body/radio.jpg'],
   },
   {
-    title: 'ULTRAFORMER CORPORAL',
-    subtitle: 'Por que escolher o Ultraformer Corporal?',
+    title: 'VACUOTERAPIA',
+    subtitle:
+      'Vacuoterapia – Tratamento Avançado para Flacidez, Celulite e Renovação da Pele',
     descriptions: [
-      'O Ultraformer Corporal é ideal para quem deseja uma solução eficaz e rápida para remodelar o corpo, melhorar o tônus muscular e rejuvenescer a pele, sem os riscos e o tempo de recuperação associados aos procedimentos invasivos. Seu poder de ação é imediato, e os resultados duradouros, com a vantagem de ser um procedimento confortável e sem necessidade de anestesia.',
-      'É uma alternativa perfeita para quem busca resultados rápidos, com a segurança e a eficácia que a tecnologia de ponta oferece. Além disso, ele é adequado para todos os tipos de pele e pode ser personalizado conforme as necessidades de cada paciente, com áreas específicas a serem tratadas, garantindo um contorno corporal harmonioso e natural.',
-      'Quando os resultados aparecem?',
-      'Logo após o tratamento, você já pode perceber uma melhora significativa na firmeza e definição da pele. No entanto, os resultados continuam a se aprimorar nas semanas seguintes, à medida que o colágeno é estimulado e a gordura localizada é reduzida. Normalmente, após 2 a 3 sessões, os resultados já são visíveis, e a pele se torna mais tonificada e rejuvenescida.',
+      'A vacuoterapia é um procedimento inovador que atua diretamente na pele, tratando retenção de líquidos, flacidez e celulite de forma eficaz. Esse aparelho é reconhecido por oferecer resultados visíveis desde a primeira sessão, proporcionando uma pele mais uniforme e suave.',
+      'Benefícios da Vacuoterapia:',
+      '• Redução Imediata da Celulite:** Quebra as células de gordura, eliminando o aspecto de casca de laranja e deixando a pele com textura aveludada.',
+      '• Estímulo à Produção de Colágeno:** Promove o desprendimento da pele do músculo, oxigenando os tecidos e incentivando a formação de novas fibras de colágeno.',
+      '• Eliminação de Toxinas:** Ajuda o organismo a se livrar de toxinas acumuladas, promovendo uma pele mais saudável e revitalizada.',
+      '• Melhora da Oxigenação:** Aumenta o fluxo sanguíneo local, contribuindo para a renovação celular e saúde dos tecidos.',
+      '• Redução de Líquidos:** Atua na drenagem do excesso de líquidos, reduzindo inchaços e proporcionando conforto imediato.',
+      '• Tonificação e Firmeza:** Combina movimentos drenantes para tonificar a pele, melhorando sua textura e elasticidade.',
     ],
-    advantages: [],
+    advantages: [
+      'Resultados visíveis desde a primeira sessão.',
+      'Pele renovada, firme e com textura uniforme.',
+      'Redução do inchaço e sensação de leveza imediata.',
+      'Tratamento seguro e adaptado às suas necessidades específicas.',
+    ],
     footer:
-      'Ultraformer Corporal é a solução ideal para quem quer resultados rápidos, duradouros e naturais, sem as complicações de procedimentos invasivos. Agende sua consulta hoje mesmo e descubra o poder desta tecnologia revolucionária para transformar o seu corpo!',
+      'Descubra os benefícios da Vacuoterapia e transforme sua pele. Entre em contato para agendar sua sessão e sentir a diferença no cuidado com o seu corpo.',
     images: ['/aesthetics/body/ultra.jpg'],
   },
+  // {
+  //   title: 'ULTRAFORMER CORPORAL',
+  //   subtitle: 'Por que escolher o Ultraformer Corporal?',
+  //   descriptions: [
+  //     'O Ultraformer Corporal é ideal para quem deseja uma solução eficaz e rápida para remodelar o corpo, melhorar o tônus muscular e rejuvenescer a pele, sem os riscos e o tempo de recuperação associados aos procedimentos invasivos. Seu poder de ação é imediato, e os resultados duradouros, com a vantagem de ser um procedimento confortável e sem necessidade de anestesia.',
+  //     'É uma alternativa perfeita para quem busca resultados rápidos, com a segurança e a eficácia que a tecnologia de ponta oferece. Além disso, ele é adequado para todos os tipos de pele e pode ser personalizado conforme as necessidades de cada paciente, com áreas específicas a serem tratadas, garantindo um contorno corporal harmonioso e natural.',
+  //     'Quando os resultados aparecem?',
+  //     'Logo após o tratamento, você já pode perceber uma melhora significativa na firmeza e definição da pele. No entanto, os resultados continuam a se aprimorar nas semanas seguintes, à medida que o colágeno é estimulado e a gordura localizada é reduzida. Normalmente, após 2 a 3 sessões, os resultados já são visíveis, e a pele se torna mais tonificada e rejuvenescida.',
+  //   ],
+  //   advantages: [],
+  //   footer:
+  //     'Ultraformer Corporal é a solução ideal para quem quer resultados rápidos, duradouros e naturais, sem as complicações de procedimentos invasivos. Agende sua consulta hoje mesmo e descubra o poder desta tecnologia revolucionária para transformar o seu corpo!',
+  //   images: ['/aesthetics/body/ultra.jpg'],
+  // },
 ];

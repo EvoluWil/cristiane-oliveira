@@ -16,10 +16,13 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export function HomeHealth() {
   const [selectedService, setSelectedService] = useState<null | Service>(null);
+  const [animation, setAnimation] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   const handleSelectService = (service: Service | null) => {
     setSelectedService(service);
@@ -27,6 +30,12 @@ export function HomeHealth() {
 
   const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+
+  useEffect(() => {
+    if (inView) {
+      setAnimation(true);
+    }
+  }, [inView]);
 
   return (
     <Box
@@ -38,22 +47,15 @@ export function HomeHealth() {
       flexDirection="column"
       py={4}
       position="relative"
+      className={animation ? 'opacity-100 animate-slideIn' : 'opacity-0'}
     >
       <Box id="health" position="absolute" top={-80} />
 
-      <Typography
-        variant="h4"
-        className="animate-zoomIn"
-        fontSize={{ xs: '1.5rem', md: '2rem' }}
-      >
+      <Typography variant="h4" fontSize={{ xs: '1.5rem', md: '2rem' }}>
         Saúde e Bem-Estar
       </Typography>
-      <Divider
-        sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }}
-        className="animate-increaseSizeFromCenter"
-      />
+      <Divider sx={{ bgcolor: 'white', width: 280, height: 2, mb: 2 }} />
       <Typography
-        className="animate-fadeInUp"
         color="secondary.main"
         mb={4}
         maxWidth={800}
@@ -74,12 +76,12 @@ export function HomeHealth() {
           gap={32}
           variant="standard"
           sx={{ pb: 2 }}
-          className="animate-slideIn"
         >
           {HEALTH_SERVICES.map((item) => (
             <ImageListItem
               onClick={() => handleSelectService(item)}
               key={item.title}
+              ref={ref}
               sx={{
                 bgcolor: 'rgba(214,157,161, 0.5)',
                 borderRadius: 1,
