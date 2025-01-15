@@ -1,9 +1,6 @@
-import { Footer } from '@/components/display/footer/footer';
-import { Header } from '@/components/display/header/header';
-import WhatsAppButton from '@/components/layout/whatsapp/whatsapp';
 import '@/global/globals.css';
 import { AppProviders } from '@/providers';
-import { Box, CssBaseline } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 
@@ -25,12 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={roboto.className}>
-        <AppProviders>
-          <Header />
-          <Box mt={10}>{children}</Box>
-          <WhatsAppButton />
-          <Footer />
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
         <CssBaseline />
       </body>
     </html>

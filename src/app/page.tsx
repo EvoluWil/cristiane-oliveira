@@ -1,4 +1,7 @@
 'use client';
+import { Footer } from '@/components/display/footer/footer';
+import { Header } from '@/components/display/header/header';
+import WhatsAppButton from '@/components/layout/whatsapp/whatsapp';
 import { HomeAesthetics } from '@/components/partials/home/aesthetics/home-aesthetics';
 import { HomeBeauty } from '@/components/partials/home/beauty/beauty';
 import { HomeHealth } from '@/components/partials/home/health/health';
@@ -19,11 +22,16 @@ export default function Home() {
 
   return (
     <Box>
-      <HomeInitial />
-      <HomeAesthetics />
-      <HomeBeauty />
-      <HomeHealth />
-      <HomeLocation />
+      <Header />
+      <Box mt={10}>
+        <HomeInitial />
+        <HomeAesthetics />
+        <HomeBeauty />
+        <HomeHealth />
+        <HomeLocation />
+      </Box>
+      <WhatsAppButton />
+      <Footer />
     </Box>
   );
 }
