@@ -86,12 +86,7 @@ export const LavieenHighlights: React.FC = () => {
               </Typography>
             </Box>
 
-            <Typography
-              color="secondary.main"
-              variant="body1"
-              color="secondary.main"
-              sx={{ mb: 2 }}
-            >
+            <Typography color="secondary.main" variant="body1" sx={{ mb: 2 }}>
               O Lavieen é uma plataforma de laser utilizada em protocolos
               personalizados para promover melhora gradual da aparência e da
               uniformidade da pele, sempre mediante avaliação profissional.
