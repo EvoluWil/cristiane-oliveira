@@ -157,6 +157,25 @@ const About: React.FC<AboutProps> = ({
                   borderRadius: '28px',
                 }}
               >
+                <Box
+                  position="absolute"
+                  border="4px solid"
+                  borderRadius={2}
+                  borderColor="secondary.main"
+                  width={400}
+                  height={500}
+                  bottom={8}
+                />
+                <Box
+                  position="absolute"
+                  border="4px solid"
+                  borderRadius={2}
+                  borderColor="primary.main"
+                  width={400}
+                  height={500}
+                  bottom={-32}
+                  left={32}
+                />
                 <Image
                   src={managerImage as string}
                   alt={managerName}

@@ -79,13 +79,19 @@ export const LavieenHighlights: React.FC = () => {
               <Typography
                 variant="h3"
                 component="h2"
+                color="secondary.main"
                 sx={{ fontWeight: 800, letterSpacing: '-0.02em', mt: 1 }}
               >
                 Lavieen — tecnologia a favor da sua pele
               </Typography>
             </Box>
 
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            <Typography
+              color="secondary.main"
+              variant="body1"
+              color="secondary.main"
+              sx={{ mb: 2 }}
+            >
               O Lavieen é uma plataforma de laser utilizada em protocolos
               personalizados para promover melhora gradual da aparência e da
               uniformidade da pele, sempre mediante avaliação profissional.
@@ -116,7 +122,12 @@ export const LavieenHighlights: React.FC = () => {
                     },
                   }}
                 >
-                  <Typography variant="subtitle1" fontWeight={700} mb={0.5}>
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight={700}
+                    mb={0.5}
+                    color="secondary.main"
+                  >
                     Planejamento Individual
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -138,7 +149,12 @@ export const LavieenHighlights: React.FC = () => {
                     },
                   }}
                 >
-                  <Typography variant="subtitle1" fontWeight={700} mb={0.5}>
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight={700}
+                    mb={0.5}
+                    color="secondary.main"
+                  >
                     Orientações de Cuidado
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
