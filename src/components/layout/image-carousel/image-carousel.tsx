@@ -6,9 +6,13 @@ import './image-carousel.css';
 
 interface ImageCarouselProps {
   images: string[];
+  detailedView?: boolean;
 }
 
-export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
+export const ImageCarousel: React.FC<ImageCarouselProps> = ({
+  images,
+  detailedView,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = (e: any) => {
@@ -24,7 +28,10 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   };
 
   return (
-    <div className="carousel-container">
+    <div
+      className="carousel-container"
+      style={{ minHeight: detailedView ? 400 : 300 }}
+    >
       {images?.length > 1 && (
         <IconButton onClick={prevSlide} className="carousel-button prev-button">
           <ArrowBackIos />
@@ -35,6 +42,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
           src={images[currentIndex]}
           alt={`Slide ${currentIndex}`}
           className={`carousel-image`}
+          style={{ minHeight: detailedView ? '600px' : '300px' }}
         />
       </div>
       {images?.length > 1 && (

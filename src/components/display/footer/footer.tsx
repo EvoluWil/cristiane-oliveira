@@ -26,6 +26,7 @@ export const Footer = () => {
                   display="block"
                   href="https://www.google.com/maps/dir//Cristiane+Oliveira+Est%C3%A9tica+Avan%C3%A7ada+-+Av.+S%C3%A3o+Camilo,+1181+-+Sala+07+-+Portal+da+Granja,+Cotia+-+SP,+06709-150/@-23.582528,-46.8387545,18.75z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94cfabe479a458b5:0x8c01e1777312ae98!2m2!1d-46.838321!2d-23.5825854!3e0?entry=ttu"
                   target="_blank"
+                  whiteSpace="nowrap"
                 >
                   Avenida São Camilo, 1181 - Sala 07
                 </Typography>
@@ -34,6 +35,7 @@ export const Footer = () => {
                   display="block"
                   href="https://www.google.com/maps/dir//Cristiane+Oliveira+Est%C3%A9tica+Avan%C3%A7ada+-+Av.+S%C3%A3o+Camilo,+1181+-+Sala+07+-+Portal+da+Granja,+Cotia+-+SP,+06709-150/@-23.582528,-46.8387545,18.75z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94cfabe479a458b5:0x8c01e1777312ae98!2m2!1d-46.838321!2d-23.5825854!3e0?entry=ttu"
                   target="_blank"
+                  whiteSpace="nowrap"
                 >
                   Granja Viana - Cotia - SP - 06709-150
                 </Typography>

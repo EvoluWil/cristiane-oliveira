@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export function HomeInitial() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>

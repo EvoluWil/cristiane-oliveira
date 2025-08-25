@@ -6,7 +6,6 @@ import { HEALTH_SERVICES } from '@/constants/services/health';
 import { Service } from '@/types/services';
 import {
   Box,
-  Button,
   Container,
   Divider,
   ImageList,
@@ -72,7 +71,7 @@ export function HomeHealth() {
 
       <Container>
         <ImageList
-          cols={isXS ? 1 : isSM ? 3 : 4}
+          cols={isXS ? 1 : 3}
           gap={32}
           variant="standard"
           sx={{ pb: 2 }}
@@ -83,10 +82,10 @@ export function HomeHealth() {
               key={item.title}
               ref={ref}
               sx={{
-                bgcolor: 'rgba(214,157,161, 0.5)',
-                borderRadius: 1,
+                borderRadius: 6,
                 overflow: 'hidden',
                 boxShadow: 4,
+                bgcolor: 'white',
               }}
             >
               <ImageCarousel images={item.images} />
@@ -96,18 +95,13 @@ export function HomeHealth() {
                 position="below"
                 sx={{
                   color: 'secondary.main',
-                  px: 1,
+                  px: 2,
+                  py: 1,
                   '*': {
                     whiteSpace: 'normal !important',
                   },
                 }}
               />
-              <Button
-                variant="text"
-                sx={{ color: 'white', fontSize: '0.8rem', mt: 'auto' }}
-              >
-                Saiba mais
-              </Button>
             </ImageListItem>
           ))}
         </ImageList>

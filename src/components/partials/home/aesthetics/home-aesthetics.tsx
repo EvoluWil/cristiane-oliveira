@@ -7,7 +7,6 @@ import { FACIAL_SERVICES } from '@/constants/services/facial';
 import { Service } from '@/types/services';
 import {
   Box,
-  Button,
   Container,
   Divider,
   ImageList,
@@ -92,7 +91,7 @@ export function HomeAesthetics() {
         </Box>
         <Container>
           <ImageList
-            cols={isXS ? 1 : isSM ? 3 : 4}
+            cols={isXS ? 1 : 3}
             gap={32}
             variant="standard"
             sx={{ pb: 2 }}
@@ -106,10 +105,10 @@ export function HomeAesthetics() {
                 onClick={() => handleSelectService(item)}
                 key={item.title}
                 sx={{
-                  bgcolor: 'rgba(214,157,161, 0.5)',
-                  borderRadius: 1,
+                  borderRadius: 6,
                   overflow: 'hidden',
                   boxShadow: 4,
+                  bgcolor: 'white',
                 }}
               >
                 <ImageCarousel images={item.images} />
@@ -119,18 +118,13 @@ export function HomeAesthetics() {
                   position="below"
                   sx={{
                     color: 'secondary.main',
-                    px: 1,
+                    py: 1,
+                    px: 2,
                     '*': {
                       whiteSpace: 'normal !important',
                     },
                   }}
                 />
-                <Button
-                  variant="text"
-                  sx={{ color: 'white', fontSize: '0.8rem' }}
-                >
-                  Saiba mais
-                </Button>
               </ImageListItem>
             ))}
           </ImageList>
@@ -188,7 +182,7 @@ export function HomeAesthetics() {
         </Box>
         <Container>
           <ImageList
-            cols={isXS ? 1 : isSM ? 3 : 4}
+            cols={isXS ? 1 : 3}
             gap={32}
             variant="standard"
             sx={{ pb: 2 }}
@@ -202,10 +196,10 @@ export function HomeAesthetics() {
                 onClick={() => handleSelectService(item)}
                 key={item.title}
                 sx={{
-                  bgcolor: 'rgba(214,157,161, 0.5)',
-                  borderRadius: 1,
+                  borderRadius: 6,
                   overflow: 'hidden',
                   boxShadow: 4,
+                  bgcolor: 'white',
                 }}
               >
                 <ImageCarousel images={item.images} />
@@ -215,18 +209,13 @@ export function HomeAesthetics() {
                   position="below"
                   sx={{
                     color: 'secondary.main',
-                    px: 1,
+                    py: 1,
+                    px: 2,
                     '*': {
                       whiteSpace: 'normal !important',
                     },
                   }}
                 />
-                <Button
-                  variant="text"
-                  sx={{ color: 'white', fontSize: '0.8rem', mt: 'auto' }}
-                >
-                  Saiba mais
-                </Button>
               </ImageListItem>
             ))}
           </ImageList>
