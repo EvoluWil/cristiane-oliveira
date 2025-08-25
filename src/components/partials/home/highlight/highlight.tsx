@@ -154,13 +154,8 @@ export const LavieenHighlights: React.FC = () => {
                 size="large"
                 variant="contained"
                 color="secondary"
-                onClick={() => {
-                  // role para seção de contato/agendamento se existir na página
-                  const el =
-                    document.querySelector('#contato') ||
-                    document.querySelector('#agendamento');
-                  el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
+                href="https://www.trinks.com/cristianeoliveira"
+                target="_blank"
               >
                 Agendar avaliação
               </Button>
