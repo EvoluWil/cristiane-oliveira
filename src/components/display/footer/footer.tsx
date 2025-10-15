@@ -1,7 +1,7 @@
-import { Copyright } from '@/components/layout/copyright/copyright';
-import { Call, Place, WhatsApp } from '@mui/icons-material';
-import { Box, Container, Grid, Typography } from '@mui/material';
-import Image from 'next/image';
+import { Copyright } from "@/components/layout/copyright/copyright";
+import { Call, Place, WhatsApp } from "@mui/icons-material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -17,7 +17,7 @@ export const Footer = () => {
               alignItems="center"
               gap={2}
               justifyContent="center"
-              textAlign={{ xs: 'center', md: 'left' }}
+              textAlign={{ xs: "center", md: "left" }}
             >
               <Place />
               <Box>
@@ -48,9 +48,9 @@ export const Footer = () => {
                   <Call
                     sx={{
                       fontSize: 20,
-                      borderColor: 'secondary.main',
+                      borderColor: "secondary.main",
                       borderWidth: 1.5,
-                      borderRadius: '50%',
+                      borderRadius: "50%",
                       width: 20,
                       height: 20,
                       padding: 0.3,
@@ -67,9 +67,9 @@ export const Footer = () => {
             xs={12}
             md={4}
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Box>
@@ -101,7 +101,6 @@ export const Footer = () => {
                   alt="@crisoliveiraesteticaebeleza"
                   width={50}
                   height={50}
-                  layout="fixed"
                 />
               </Box>
               <Box
@@ -114,7 +113,6 @@ export const Footer = () => {
                   alt="@estetica._crisoliveira"
                   width={50}
                   height={50}
-                  layout="fixed"
                 />
               </Box>
               <Box
@@ -127,10 +125,9 @@ export const Footer = () => {
                   alt="@cristianeoliveira"
                   width={45}
                   height={45}
-                  layout="fixed"
                   style={{
-                    borderRadius: '6px',
-                    border: '1px solid #492132',
+                    borderRadius: "6px",
+                    border: "1px solid #492132",
                     borderWidth: 2,
                   }}
                 />
@@ -142,8 +139,8 @@ export const Footer = () => {
               >
                 <Box
                   style={{
-                    borderRadius: '6px',
-                    border: '1px solid #492132',
+                    borderRadius: "6px",
+                    border: "1px solid #492132",
                     borderWidth: 2,
                   }}
                 >
